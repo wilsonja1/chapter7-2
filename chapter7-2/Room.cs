@@ -8,5 +8,6 @@ namespace chapter7_2
 {
     class Room
     {
+        private string descoration { get; set; }
     }
 }

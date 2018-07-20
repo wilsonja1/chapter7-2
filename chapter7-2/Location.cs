@@ -21,7 +21,7 @@ namespace chapter7_2
         {
             get
             {
-                string description = "You're standing in the " + Name + ". You see exits to teh following places: ";
+                string description = "You're standing in the " + Name + ". You see exits to the following places: ";
                 for (int i = 0; i < Exits.Length; i++)
                 {
                     description += " " + Exits[i].Name;

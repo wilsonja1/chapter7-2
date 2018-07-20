@@ -8,5 +8,6 @@ namespace chapter7_2
 {
     class Outside
     {
+        private bool Hot { get; set; }
     }
 }
