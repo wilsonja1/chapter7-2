@@ -8,8 +8,14 @@ namespace chapter7_2
 {
     class RoomWithDoor : Room, IHasExteriorDoor
     {
-        public string DoorDescription => throw new NotImplementedException();
+        public RoomWithDoor(string name, string decoration, string doorDescription)
+            : base(name, decoration)
+        {
+            DoorDescription = doorDescription;
+        }
 
-        public Location DoorLocation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string DoorDescription { get; private set; }
+
+        public Location DoorLocation { get; set; }
     }
 }

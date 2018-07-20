@@ -8,7 +8,8 @@ namespace chapter7_2
 {
     class OutsideWithDoor : Outside, IHasExteriorDoor
     {
-        public OutsideWithDoor(string name, bool hot, string doorDescription) : base(name, hot)
+        public OutsideWithDoor(string name, bool hot, string doorDescription)
+            : base(name, hot)
         {
             this.DoorDescription = doorDescription;
         }
