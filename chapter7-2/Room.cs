@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace chapter7_2
 {
-    class Room
+    class Room : Location
     {
-        private string descoration { get; set; }
+        public Room(string name, string decoration) : base(name)
+        {
+            this.decoration = decoration;
+        }
+
+        private string decoration { get; set; }
     }
 }
