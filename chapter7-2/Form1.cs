@@ -26,6 +26,7 @@ namespace chapter7_2
         {
             InitializeComponent();
             CreateObjects();
+            MoveToANewLocation(livingRoom);
         }
 
         private void CreateObjects()
