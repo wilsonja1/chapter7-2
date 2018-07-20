@@ -25,6 +25,7 @@ namespace chapter7_2
         public Form1()
         {
             InitializeComponent();
+            CreateObjects();
         }
 
         private void CreateObjects()
@@ -51,14 +52,32 @@ namespace chapter7_2
             backYard.DoorLocation = kitchen;
         }
 
+        private void MoveToANewLocation(Location newLocation)
+        {
+            currentLocation = newLocation;
+
+            comboBox1.Items.Clear();
+            for (int i = 0; i < currentLocation.Exits.Length; i++)
+                comboBox1.Items.Add(currentLocation.Exits[i].Name);
+            comboBox1.SelectedIndex = 0;
+
+            textBox1.Text = currentLocation.Description;
+
+            if (currentLocation is IHasExteriorDoor)
+                goThroughTheDoor.Visible = true;
+            else
+                goThroughTheDoor.Visible = false;
+        }
+
         private void goHere_Click(object sender, EventArgs e)
         {
-
+            MoveToANewLocation(currentLocation.Exits[comboBox1.SelectedIndex]);
         }
 
         private void goThroughTheDoor_Click(object sender, EventArgs e)
         {
-
+            IHasExteriorDoor hasDoor = currentLocation as IHasExteriorDoor;
+            MoveToANewLocation(hasDoor.DoorLocation);
         }
     }
 }
